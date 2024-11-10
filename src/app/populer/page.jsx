@@ -23,9 +23,9 @@ const Page = () => {
 
   return (
     <>
-      <HeaderMenu />
+      <HeaderMenu title={`ANIME TERPOPULER #${page}`}/>
       <AnimeList api={topAnime}/>
-      <Pagination />
+      <Pagination page={page} lastPage={topAnime.pagination?.last_visible_page} setPage={setPage}/>
     </>
   );
 };
