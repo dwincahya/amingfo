@@ -1,4 +1,5 @@
 import { getAnimeRespons } from "@/app/service/api-service";
+import VideoPlayer from "@/components/Utilities/VideoPlayer";
 import Image from "next/image";
 import React from "react";
 
@@ -43,6 +44,9 @@ const Page = async ({ params: { id } }) => {
           className="w-full rounded object-cover"
         />
         <p className="text-justify text-xl">{anime.data.synopsis}</p>
+      </div>
+      <div>
+        <VideoPlayer youtubeId={anime.data.trailer.youtube_id}/>
       </div>
     </>
   );
