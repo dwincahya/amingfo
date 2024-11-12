@@ -12,6 +12,28 @@ const Page = async ({ params: { id } }) => {
           {anime.data.title} - {anime.data.year}
         </h3>
       </div>
+      <div className="pt-4 overflow-x-auto px-4 flex gap-4 text-color-primary">
+        <div className="w-36 p-2 flex flex-col justify-center items-center rounded border border-color-primary">
+          <h3>PERINGKAT</h3>
+          <p>{anime.data.rank}</p>
+        </div>
+        <div className="w-36 p-2 flex flex-col justify-center items-center rounded border border-color-primary">
+          <h3>SKOR</h3>
+          <p>{anime.data.score}</p>
+        </div>
+        <div className="w-36 p-2 flex flex-col justify-center items-center rounded border border-color-primary">
+          <h3>EPISODE</h3>
+          <p>{anime.data.episodes}</p>
+        </div>
+        <div className="w-36 p-2 flex flex-col justify-center items-center rounded border border-color-primary">
+          <h3>Musim</h3>
+          <p>{anime.data.season}</p>
+        </div>
+        <div className="w-36 p-2 flex flex-col justify-center items-center rounded border border-color-primary">
+          <h3>Favorit</h3>
+          <p>{anime.data.favorites}</p>
+        </div>
+      </div>
       <div className="pt-4 px-4 flex sm:flex-nowrap flex-wrap gap-2 text-color-primary">
         <Image
           src={anime.data.images.webp.image_url}
