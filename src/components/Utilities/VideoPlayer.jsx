@@ -27,7 +27,7 @@ const VideoPlayer = ({ youtubeId }) => {
         </div>
         <Youtube
           videoId={youtubeId}
-          onReady={(event) => event.target.pause()}
+          onReady={(event) => event.target.pauseVideo()}
           opts={option}
         />
       </div>
