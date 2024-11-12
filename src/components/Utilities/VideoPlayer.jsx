@@ -38,7 +38,7 @@ const VideoPlayer = ({ youtubeId }) => {
     return (
       <button
         onClick={handleVideoPlayer}
-        className="text-xl hover:bg-color-accent transition-all shadow-xl fixed bottom-5 right-5 w043 bg-color-primary text-color-dark"
+        className="rounded text-xl hover:bg-color-accent transition-all shadow-xl fixed bottom-5 right-5 w-32 bg-color-primary text-color-dark"
       >
         Tonton Trailer
       </button>
