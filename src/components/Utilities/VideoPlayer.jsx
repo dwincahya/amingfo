@@ -1,28 +1,40 @@
 "use client";
-import { XCircle } from "@phosphor-icons/react";
-import React from "react";
+import React, { useState } from "react";
 import Youtube from "react-youtube";
 
 const VideoPlayer = ({ youtubeId }) => {
+  const [isOpen, setIsOpen] = useState(true);
+
+  const handleCloseButton = () => {
+    setIsOpen((prevState) => !prevState);
+  };
+
   const option = {
     width: "300",
     height: "250",
   };
 
-  return (
-    <div className="fixed bottom-0 right-0">
-      <div>
-        <button>
-          <XCircle size={32} />
-        </button>
+  const Player = () => {
+    return (
+      <div className="fixed bottom-2 right-2">
+        <div>
+          <button
+            className="text-color-primary float-right bg-color-dark px-3 mb-1"
+            onClick={handleCloseButton}
+          >
+            X
+          </button>
+        </div>
+        <Youtube
+          videoId={youtubeId}
+          onReady={(event) => event.target.pause()}
+          opts={option}
+        />
       </div>
-      <Youtube
-        videoId={youtubeId}
-        onReady={(event) => event.target.pause()}
-        opts={option}
-      />
-    </div>
-  );
+    );
+  };
+
+  return isOpen ? <Player /> : null;
 };
 
 export default VideoPlayer;
