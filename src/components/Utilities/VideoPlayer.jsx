@@ -5,7 +5,7 @@ import Youtube from "react-youtube";
 const VideoPlayer = ({ youtubeId }) => {
   const [isOpen, setIsOpen] = useState(true);
 
-  const handleCloseButton = () => {
+  const handleVideoPlayer = () => {
     setIsOpen((prevState) => !prevState);
   };
 
@@ -20,7 +20,7 @@ const VideoPlayer = ({ youtubeId }) => {
         <div>
           <button
             className="text-color-primary float-right bg-color-dark px-3 mb-1"
-            onClick={handleCloseButton}
+            onClick={handleVideoPlayer}
           >
             X
           </button>
@@ -34,7 +34,18 @@ const VideoPlayer = ({ youtubeId }) => {
     );
   };
 
-  return isOpen ? <Player /> : null;
+  const ButtonOpenTrailer = () => {
+    return (
+      <button
+        onClick={handleVideoPlayer}
+        className="text-xl hover:bg-color-accent transition-all shadow-xl fixed bottom-5 right-5 w043 bg-color-primary text-color-dark"
+      >
+        Tonton Trailer
+      </button>
+    );
+  };
+
+  return isOpen ? <Player /> : <ButtonOpenTrailer />;
 };
 
 export default VideoPlayer;
