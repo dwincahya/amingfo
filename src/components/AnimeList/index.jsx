@@ -14,7 +14,7 @@ const AnimeList = ({ api }) => {
               height={350}
               className="w-full max-h-64 object-cover"
             />
-            <h3 className=" font-bold md:text-xl text-md p-4">{anime.title} - {anime.year}</h3>
+            <h3 className=" font-bold md:text-xl text-md p-4">{anime.title}  {anime.year}</h3>
           </Link>
         );
       })}
