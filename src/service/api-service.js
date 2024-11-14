@@ -8,17 +8,22 @@ export const getAnimeRespons = async (resource, query) => {
 
 export const getNestedAnimeResponse = async (resource, objectProperty) => {
   const response = await getAnimeRespons(resource);
-  return response.data.flatMap(item => item[objectProperty]);
+
+  if (!response.data || !Array.isArray(response.data)) {
+    throw new Error(
+      "Struktur respons tidak valid: data undefined atau bukan array."
+    );
+  }
+
+  return response.data.flatMap((item) => item[objectProperty] || []);
 };
 
 export const reproduce = (data, gap) => {
-    
-    const first = ~~(Math.random() * (data.length - gap) + 1);
-    const last = first + gap;
+  const first = ~~(Math.random() * (data.length - gap) + 1);
+  const last = first + gap;
 
   const response = {
     data: data.slice(first, last),
-    
   };
   return response;
 };
