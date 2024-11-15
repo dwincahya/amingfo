@@ -1,16 +1,17 @@
 import { authUserSession } from '@/service/auth-service'
+import { redirect } from 'next/navigation'
 import Image from 'next/image'
 import React from 'react'
 
 
 const Page = async() => {
     const user = await authUserSession()
-
+    
     return (
     <div className='text-color-primary'>
         <h1>DASHBOARD</h1>
-        <h1>Hai, {user.name}</h1>
-        <Image src={user.image} alt="..." width={250} height={250}/>
+        <h1>Hai, {user?.name}</h1>
+        <Image src={user?.image} alt="..." width={250} height={250}/>
     </div>
   )
 }
