@@ -6,7 +6,7 @@ import React from "react";
 const Page = () => {
   return (
     <section className="mt-4 px-4 w-full">
-      <Header title={"My COllection"}/>
+      <Header title={"My Collection"}/>
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <Link href="" className="relative border-2 border-color-accent">
           <Image src="" alt="" width={350} height={350} className="w-full" />
