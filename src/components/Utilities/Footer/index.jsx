@@ -6,9 +6,9 @@ const Footer = () => {
           <div className="mb-6 md:mb-0">
             <a href="/" className="flex items-center">
               <img
-                src="https://flowbite.com/docs/images/logo.svg"
+                src="https://img.freepik.com/free-vector/colorful-letter-gradient-logo-design_474888-2309.jpg"
                 className="h-8 me-3"
-                alt="FlowBite Logo"
+                alt="Amingfo"
               />
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                 Amingfo
